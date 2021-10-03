@@ -1,0 +1,1085 @@
+/*
+Theme Name: Partners International
+Theme URI: http://www.transmitstudio.com
+Version: 2.0
+Description: A custom Beaver Builder child theme for Partners International.
+Author: Dave Kuhar
+Author URI: http://www.transmitstudio.com
+template: bb-theme
+*/
+
+/*
+web.fonts.com
+font-family:'Palatino LT W01 Roman723451';
+font-family:'Myriad W08 Regular';
+font-family:'Myriad W01 SmBd';
+font-family:'Myriad W01 Lt';
+*/
+
+/* override boxed layout */ 
+.fl-page {
+	width: 100% !important;
+}
+
+/* HIDE PARAMETRIC SEARCH */
+.para-search, .single-staff .fl-post-meta {
+	display: none;
+}
+
+/* defaults
+--------------------------------------------- */
+html, body, p, li {
+	font-family: Arial, sans-serif;
+	color: #333d47;
+}
+
+html, body {
+	font-size: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, .fl-page-nav .navbar-nav, .fl-page-nav .navbar-nav a {
+	font-family: Arial, sans-serif;
+}
+
+h1.fl-heading, h1, h2, h3 {
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size: 2.2rem;	
+	letter-spacing: 3px;
+}
+
+.single-post h2, .portfolio-single h2 {
+	font-size: 1.8rem;
+	letter-spacing: .5px;
+	text-transform: none;
+}
+
+h2.fl-post-grid-title a, h2.fl-post-carousel-title a {
+	color: #007197;
+	text-transform: none;
+	letter-spacing: .5px;
+}
+
+.fl-post-carousel-grid .fl-post-carousel-post {
+	border: none;
+}
+
+body .fl-post-carousel-text {
+	padding: 0;
+}
+
+.fl-post-carousel {
+	padding: 0 28px !important;
+}
+
+h3 {
+	letter-spacing: 2px;	
+}
+
+h3, h4 {
+	font-size: 2rem;
+}
+
+h5, h6 {
+	font-size: 1.8rem;
+}
+
+h4, h5, h6 {
+	color: #333d47;
+}
+
+p, ul, ol, tr, dd, dl, th, .footer-quote, .fl-accordion-small {
+	font-size: 1.6rem;
+}
+
+ul {
+	margin-left: 0;
+	padding-left: 20px;
+}
+
+.fl-content ul li {
+	color: #333d47;
+}
+
+.xmit-page-header h1.fl-post-title {
+	margin-bottom: 0;
+}
+
+.darktext {
+	color: #333E48;
+}
+
+.no-display {
+	display: none;
+	height: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.fl-row-content-wrap {
+	background: rgba(255,255,255,.975);
+}
+
+/* nav
+--------------------------------------------- */
+.fl-page-nav-wrap a,
+.fl-page-nav-wrap a:hover,
+.fl-page-nav-wrap a.fa:hover,
+.fl-page-nav-wrap .navbar-nav > li.current-menu-item > a,
+.fl-page-nav-wrap .navbar-nav > li.current-menu-item > a:hover,
+.fl-page-nav-wrap .navbar-nav > li > a:hover,
+.fl-page-nav .navbar-nav > li > a,
+.fl-page-nav .navbar-nav > li > a:hover,
+.fl-page-header .navbar-nav > li > a,
+.fl-page-header .navbar-nav > li > a:hover,
+.fl-page-header a,
+.fl-page-header a *,
+.fl-page-header a.fa,
+.fl-page-header a.fa:focus,
+.fl-page-nav-wrap .navbar-nav > li > a:hover,
+.fl-page-nav-wrap .navbar-nav > li > a:focus {
+    color: #333D45;
+}
+
+.fl-page-nav-collapse ul.navbar-nav {
+	margin-right: 60px;
+}
+
+.nav.navbar-nav.menu {
+	display: table;
+}
+
+.fl-page-nav-centered .fl-page-nav ul.navbar-nav > li,
+.fl-page-nav-bottom .fl-page-nav ul.navbar-nav > li {
+	max-width: 200px;
+	display: table-cell;
+	vertical-align: middle;
+	float: none;
+	text-align: center;
+}
+
+.fl-page-nav-bottom .fl-page-nav ul.navbar-nav > li ul.sub-menu li {
+	text-align: left;
+}
+
+.fl-page-nav-search a.fa-search {
+	padding: 26px 8px 8px;
+}
+
+.fl-page-nav-search a.fa-search:hover, .fl-page-nav-search a.fa-search:focus {
+	color: #333d47;
+}
+
+.fl-full-width .fl-page-nav-wrap {
+	max-width: 100%;
+}
+
+.fl-page-nav-search form {
+	right: -40px;
+    top: 100%;
+    width: 1100px;
+    background-color: #dddfe2;
+    border-top: none;
+    box-shadow: none;
+    padding: 20px 80px;
+}
+
+.fl-page-nav-search form input.fl-search-input {
+	font-style: italic;
+	color: #99A4AE;
+}
+
+.fl-page-nav-right .fl-page-header-wrap {
+	border-bottom: none;
+}
+
+.bullet-nav li {
+	list-style: none;
+	text-align: center;
+	display: block;
+	padding-top: 20px;
+	border-bottom: 1px solid white;
+	color: white !important;
+}
+
+.bullet-nav li a {
+	color: white !important;
+}
+
+.fl-page-bar {
+	border: none;
+	background: transparent;
+    z-index: 999;
+}
+
+.menu-header-nav-container {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+
+ul#menu-header-nav,
+ul#menu-header-nav li {
+	font-size: 1.4rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+
+ul#menu-header-nav li a {
+	color: #98a3ad;
+}
+
+.fl-page-nav ul.sub-menu {
+	background: transparent;
+	padding: 0;
+	border-top: 0;
+	width: 280px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.fl-page-nav ul.sub-menu li a {
+	background: rgba(50,61,71,.8);
+	color: white;
+	padding: 20px;
+	text-transform: none;
+}
+
+.fl-page-nav ul.sub-menu li a:hover, .fl-page-nav ul.sub-menu li a:focus {
+	background: rgba(255,255,255,.8);
+	color: #333d47;
+}
+
+.nolink {
+	cursor: initial !important;
+}
+
+.fl-page-header-row.row .col-md-6.col-sm-6:first-of-type {
+	width: 64%;
+	text-align: right;
+	float: left !important;
+	display: block !important;
+	margin-top: 0 !important;
+}
+
+.fl-page-nav-bottom .fl-page-header-logo {
+	text-align: right;
+}
+
+.fl-page-nav-bottom .fl-page-header-row .col-md-6 {
+	float: right;
+	display: block !important;
+	vertical-align: middle;
+	margin-top: 20px;
+	width: 18.5%;
+}
+
+/* homepage email signup form
+--------------------------------------------- */
+li#field_1_1 .gfield_label {
+    display: none;
+}
+
+.email-signup .gform_wrapper .gform_footer {
+	clear: none !important;
+	padding: 0;
+	margin: .6em 0 0;
+}
+
+.email-signup .gform_wrapper ul li.gfield {
+	clear: none !important;
+}
+
+.email-signup .gform_body {
+    width: 80%;
+    float: left;
+}
+
+.email-signup .gform_footer.top_label {
+    width: 5%;
+    float: left;
+}
+
+.email-signup .gform_body input {
+	background: #0A7191;
+	border: 1px white solid;
+	color: #7FB7C9;
+	font-style: italic;
+	letter-spacing: .5px;
+}
+
+.email-signup .gform_body input:focus {
+	color: white;
+}
+
+/* page/post header and footer images and content
+------------------------------------------------- */
+.xmit-page-header, .xmit-page-footer {
+	min-height:240px;
+	clear:both;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+ 	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+ 	background-size: cover;
+}
+
+.xmit-page-header.staff {
+	width: 100%;
+	min-height: 240px;
+	margin: 0;
+	padding: 0;
+	background: url(https://davekuhar.github.io/partners-international/wp-content/themes/partners-healthcare/images/personnel-header-600.jpg); 
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+}
+
+.xmit-page-footer {
+	height:315px;
+}
+
+.fl-post-header {
+	display: block !important;
+}
+
+.page-intro {
+	background: rgba(21,30,40,.8);
+}
+
+.page-intro-content {
+	/*max-width: 1100px;*/
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 40px 20px;
+	color: white;
+}
+
+.page-intro-content p, .page-intro-content li {
+/* 	font-size: 2rem; */
+	font-weight: 100;
+	font-family:'Myriad W01 Lt';
+	color: white;
+}
+
+.page-intro-content li {
+	color: #98a3ad;
+}
+
+.page-intro-content h1, .page-intro-content h2, .page-intro-content h3, .page-intro-content h4 {
+	color: white;	
+}
+
+.page-intro-content h2 {
+	font-size: 2.8rem;
+	text-transform: uppercase;
+	letter-spacing: 6px;
+}
+
+/* content well overrides
+--------------------------------------------- */
+.fl-callout-cta-link {
+	font-size: 1.4rem;
+}
+
+.fl-page-content .fl-page-footer-container.container {
+	padding-top: 0px;
+}
+
+.fl-page-footer-container {
+	padding: 0;
+}
+
+.fl-content-left {
+	border-right: none;
+}
+
+.fl-post-header {
+	margin-bottom: 0;
+}
+
+.white-text, .white-text p, .white-text h2, .white-text ul, .white-text ol {
+	color: white !important;
+}
+
+.round-link {
+  position: relative;
+  background: transparent;
+  height: 140px;
+  width: 140px;
+  margin: 0 20px 0 auto;
+  padding: 20px;
+  overflow: auto;
+  border-radius: 50%;
+  border: 2px solid white;
+  float: left;
+}
+
+a:hover .round-link {
+	background: #131C28;
+}
+
+.round-link div {
+  background: transparent;
+  color: white;
+  width: 90%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 10px;
+  overflow: auto;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+
+#accordion-scientific, #accordion-hit, #accordion-collabs, #accordion-agreements {
+	display: none;
+}
+
+.single-post .fl-page-content {
+	background: #fff;
+}
+
+.slider-row .fl-row-fixed-width {
+	max-width: 100% !important;
+}
+
+.wmif-buttons .fl-photo-caption.fl-photo-caption-below {
+    color: #00B0AA;
+    font-size: 1.8rem;
+    padding: 20px 0 10px 0;
+    font-weight: 900;
+}
+
+.fl-photo-content a img.fl-photo-img:hover {
+    opacity: 0.6;
+}
+
+.staff-photo {
+	width: 32%;
+	float: left;
+}
+
+.staff-info {
+	width: 66%;
+	float: right;
+}
+
+.council-member-info {
+	width: 84%;
+	float: right;
+}
+
+.history-row h2.fl-callout-title {
+	display: block;
+	width: 10%;
+	float: left;
+	text-align: right;
+	text-transform: none;
+}
+
+.history-row .fl-callout-text-wrap {
+	display: block;
+	width: 85%;
+	float: right;
+}
+
+.fl-post-grid-post {
+	border: none;
+}
+
+.fl-post-grid-more, .fl-accordion-button-label {
+	font-family:'Myriad W01 SmBd';
+}
+
+.fl-post-grid-more {
+	font-size: 14px;
+}
+
+.fl-photo-align-center {
+	text-align: left !important;
+}
+
+.fl-callout-title a {
+	color: #007197;
+}
+
+.fl-callout-title a:hover {
+	opacity: 0.7;
+}
+
+
+/* title bars & content bottom border
+--------------------------------------------- */
+#header-holder {
+/* 	padding-top: 262px; */
+	padding-top: 180px;
+}
+
+.color1 {
+	background-color:rgba(0,175,170,.65); /* teal */
+}
+.color2 {
+	background-color:rgba(110,205,178,.65); /* mint */
+}
+.color3 {
+	background-color:rgba(107,163,185,.65); /* blue */
+}
+.color4 {
+	background-color:rgba(255,210,108,.80); /* yellow */
+}
+.color5 {
+	background-color:rgba(113,160,135,.65); /* green */
+}
+.color6 {
+	background-color:rgba(226,67,1,.65); /* orange */
+}
+.color7 {
+	background-color:rgba(193,185,0,.65); /* contact page yellow */
+}
+
+h1.fl-post-title, h2.fl-news-header {
+	font-family:'Palatino LT W01 Roman723451', serif;
+	/*text-transform: uppercase;*/
+	/*letter-spacing: 12px;*/
+	letter-spacing: 2px;
+	/*text-align: center;*/
+	padding: 16px 0;
+	font-size: 2.4rem;
+}
+
+body.home header.fl-post-header {
+	display: none !important;
+}
+
+.single-post .fl-post h1.fl-post-title {
+	font-family:'Myriad W08 Regular';
+	color: #333d47;
+	letter-spacing: .5px;
+	text-align: left;
+	padding: 16px 0 0;
+	font-size: 2.4rem;
+}
+
+.single-post .fl-post {
+	margin-bottom: 20px;
+}
+
+.fl-post-date {
+	font-size: 1.8rem;
+}
+
+.bottom-color1 {
+	border-bottom: 20px solid rgb(0,175,170); /* teal */
+}
+.bottom-color2 {
+	border-bottom: 20px solid rgb(110,205,178); /* mint */
+}
+.bottom-color3 {
+	border-bottom: 20px solid rgb(107,163,185); /* blue */
+}
+.bottom-color4 {
+	border-bottom: 20px solid rgb(250,223,141); /* yellow */
+}
+.bottom-color5 {
+	border-bottom: 20px solid rgb(109,205,177); /* green */
+}
+.bottom-color6 {
+	border-bottom: 20px solid rgb(226,67,1); /* orange */
+}
+
+/* tabs
+--------------------------------------------- */
+.fl-tabs-label {
+    font-size: 1.4rem;
+    text-align: center;
+    color: white;
+    margin: 0 1rem 1rem 0;
+    border: 1px solid #141d28;
+    max-width: 170px;
+    min-height: 70px;
+}
+
+.fl-tabs-label:hover {
+	border: 1px solid white;
+}
+
+.fl-tabs-label.fl-tab-active {
+	color: #141d28;
+}
+
+.fl-tabs-panels, .fl-tabs-panel {
+	border: none !important;
+	background-color: #3D444D;
+	color: white !important;
+}
+
+.fl-tabs-panel-content h2,
+.fl-tabs-panel-content h3,
+.fl-tabs-panel-content h4,
+.fl-tabs-panel-content h5,
+.fl-tabs-panel-content h6,
+.fl-tabs-panel-content p {
+	color: white;
+}
+
+.tabs-row .fl-row-content-wrap, .tabs-row .fl-module-content {
+	padding: 0;
+	margin: 0;
+}
+
+.tabs-row .fl-row-fixed-width {
+	max-width: 100%;
+}
+
+.tabs-row .fl-tabs-labels, .tabs-row .fl-tabs-panel {
+	width: auto;
+	margin: 0 auto;
+}
+
+.tabs-row .fl-tabs-labels {
+	margin-top: 20px;
+}
+
+.fl-tabs-labels .fl-tabs-label {
+  display: table;
+  width: 100%;
+  border-radius: 100%;
+}
+.fl-tabs-labels .fl-tabs-label span {
+  display: table-cell;
+  vertical-align: middle;
+  width: 140px;
+  height: 140px;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+/* staff
+--------------------------------------------- */
+.staff-info h1.fl-post-title, .council-member-info h1.fl-post-title {
+	font-family:'Myriad W01 SmBd', sans-serif;
+	font-size: 2rem;
+	letter-spacing: 0px;
+	color: #333d47;
+	font-weight: normal;
+	text-align: left;
+	padding: 0;
+	text-transform: none;
+	margin-bottom: 0;
+}
+
+.staff-creds {
+	list-style: none;
+	padding-left: 0;
+}
+
+.fl-content ul li.staff-phone, .fl-content ul li.staff-email {
+	font-family:'Myriad W08 Regular';
+	color: #007197;
+}
+
+div.staff-taxonomy span {
+	font-size: 1.4rem;
+}
+
+.staff-thumb, .portfolio-thumb, .council-thumb {
+	width: 31%;
+    float: left;
+    margin-bottom: 2rem;
+    min-height: 335px;
+    border-bottom: 1px solid #D4D4D4;
+    margin: 1rem 1% 2rem;}
+
+.council-thumb {
+	width: auto;
+}
+
+.portfolio-thumb {
+	min-height: 182px;
+}
+
+.staff-thumb h3, .portfolio-thumb h3, .council-thumb h3 {
+	font-size: 1.6rem;
+	text-transform: none;
+	letter-spacing: 0;
+	text-align: left;
+	margin: .8rem 0 0;
+}
+
+.portfolio-thumb h3 {
+	font-size: 1.2rem;
+}
+
+.staff-thumb h3 a, .portfolio-thumb h3 a, , .council-thumb h3 a {
+	color: #007197;
+}
+
+.staff-thumb h3 a:hover, .staff-thumb-photo img:hover,
+.portfolio-thumb h3 a:hover, .portfolio-thumb-photo img:hover,
+.council-thumb h3 a:hover, .council-thumb-photo img:hover {
+    opacity: 0.7;
+}
+
+.staff-thumb p, .portfolio-thumb p, .council-thumb p {
+	text-align: left;
+	font-size: 1.4rem;
+}
+
+.staff-thumb-photo, .portfolio-thumb-photo, .council-thumb-photo {
+	clear: left;
+	text-align: left;
+}
+
+.parametric-search-tools {
+	font-size: 1.6rem;
+	margin-bottom: 2rem;
+}
+
+.parametric-search-tools .js-wpv-filter-trigger {
+	margin-left: 1.4rem;
+}
+
+.para-search span {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.para-search span.para-depts {
+	width: 45%;
+	margin-bottom: 1rem;
+}
+
+.para-search span.para-sectors {
+	width: 45%;
+	margin-bottom: 1rem;	
+}
+
+.para-search span.para-search {
+	width: 60%;
+}
+
+.para-search span.para-reset {
+	width: 35%;
+}
+
+.para-search span input[type=text] {
+	display: inline-block;
+    width: 80%;
+    padding: 2px 18px;
+    margin: 0 0 0 6px;
+}
+
+.para-search span.para-reset input[type=button] {
+	padding: 6px 26px;
+	margin-left: 8px;
+}
+
+/* portfolio
+--------------------------------------------- */
+.portfolio-logo {
+	width: 25%;
+	float: left;
+}
+
+.portfolio-content {
+	width: 75%;
+	float: right;
+}
+
+/* email
+--------------------------------------------- */
+.email-signup {
+  background: 
+    linear-gradient(
+      rgba(0,113,151,.9), 
+      rgba(0,113,151,.9)
+    ),
+    url(https://davekuhar.github.io/partners-international/wp-content/themes/partners-healthcare/images/email-signup.jpg);
+    color: white;
+}
+
+.email-signup h2, .email-signup p {
+	color: white;
+}
+
+/* footer
+--------------------------------------------- */
+.fl-page-footer {
+	border: none;
+	background: #141d28;
+}
+
+.footer-quote-holder {
+	background: rgba(21,30,40,.8);
+	margin-top: -90px;
+}
+
+.home .footer-quote-holder {
+	margin-top: 0;
+}
+
+.footer-quote {
+	width: 1100px;
+	margin: 0 auto;
+	padding: 20px 0 18px;
+	color: white;
+	text-align: center;
+}
+
+.footer-quote p {
+	color: white;
+	margin: 0;
+}
+
+.footer-quote-cite {
+	display: block;
+	font-style: italic;
+}
+
+.fl-page-footer-row .col-md-6 {
+	width: 100%;
+	float: none;
+}
+
+.fl-page-footer-row .col-md-6.text-left, .fl-page-footer-row .col-md-6.text-right {
+	text-align: center;
+	margin: 40px 0;
+}
+
+.single-staff .col-md-8 {
+	width: 100% !important;
+}
+
+.footer-partners {
+    width: 36%;
+    float: left;
+    margin-right: 30px;
+}
+
+.footer-hospital {
+	width: 12%;
+	float: left;
+	margin-top: 20px;
+	margin-right: 26px;
+}
+
+.footer-hospital:last-of-type {
+	margin-right: 0;
+}
+
+.fl-page-footer-row.row {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
+/* Gravity Forms
+--------------------------------------------- */
+.gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit] {
+	font-size: 1.8em;
+	color: white;
+}
+
+.gform_confirmation_message_2 {
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* hotspots */
+.uabb-hotspot-tooltip-content {
+	width: 350px !important;
+	text-align: left !important;
+	border: 3px solid #C7922C !important;
+}
+
+.uabb-hotspot-tooltip-content h3 {
+	background-color: #C7922C;
+	color: white !important;
+	padding: 10px;
+	font-weight: 900 !important;
+}
+
+.uabb-module-content .uabb-text-editor *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+	font-size: 18px;
+	padding: 10px;
+	font-weight: 500 !important;
+}
+
+/*	wtf nav */
+.fl-page-nav-wrap .navbar-nav li.current-menu-ancestor > a,
+.fl-page-nav-wrap .navbar-nav li.current-menu-parent > a,
+.fl-page-nav-wrap .navbar-nav li.current-menu-item > a {
+    color: #3E484D !important;   
+}
+
+/* responsive
+--------------------------------------------- */
+@media (min-width: 768px) {
+
+	.fl-page-nav-wrap .navbar-nav > li.current-menu-item > a,
+	.fl-page-nav .navbar-nav > li > a,
+	.fl-page-header .navbar-nav > li > a,
+	.fl-page-header a,
+	.fl-page-header a *,
+	.fl-page-header a.fa {
+		color: #333D45;	
+	}
+
+	.fl-page-nav-wrap .navbar-nav > li.current-menu-item:hover,
+	.fl-page-nav .navbar-nav > li:hover,
+	.fl-page-header .navbar-nav > li:hover {
+		background-color: rgba(232, 232, 232, 0.94);
+	}
+
+	
+	.fl-page-nav-wrap .navbar-nav > li > a:hover,
+	.fl-page-nav-wrap .navbar-nav > li > a:focus {
+		color: #333D45;
+	}
+
+}
+
+/* Shrunken DESKTOP portal & Tablets break point */
+@media only screen
+and (min-width: 768px) and (max-width: 1100px) {
+	.xmit-page-header {
+		min-height: 10px;
+	}
+	
+	#header-holder {
+		padding-top: 0;
+	}
+
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+	/* placeholder
+	--------------------------------------------- */
+}
+
+
+@media (max-width: 768px) {
+	.fl-tabs-labels .fl-tabs-label span {
+		width: auto;
+		height: auto;
+	}
+
+	.fl-callout-icon-left .fl-icon, .fl-callout-icon-left-text .fl-icon {
+		padding-bottom: 15px;
+	}
+
+	h1.fl-post-title, h2.fl-news-header {
+		letter-spacing: 0;
+	}
+
+	.fl-rich-text ul {
+		margin-bottom: 0;
+	}
+
+	.fl-module.last-column .fl-rich-text {
+		margin-bottom: 10px;
+	}
+
+	.fl-page-nav-bottom .fl-page-header-logo {
+		text-align: left;
+	}
+
+	.para-search span.para-depts, .para-search span.para-sectors, .para-search, .para-reset,
+	.staff-thumb, .portfolio-thumb, .council-thumb {
+		width: 90% !important;
+		margin: 10px auto 0;
+	}
+	
+	.staff-thumb, .portfolio-thumb, .council-thumb, .staff-thumb-photo {
+		width: 100% !important;
+	}
+	
+	.staff-thumb-photo img {
+		width: auto !important;
+		height: auto !important;
+	}
+	
+	.para-search span.para-depts, .para-search span.para-sectors, .para-search, .para-reset,
+	.parametric-search-tools .js-wpv-filter-trigger {
+		margin-left: 0 !important;
+	}
+	
+	select.js-wpv-filter-trigger {
+		font-size: 10px !important;
+	}
+	
+	.portfolio-thumb {
+		margin: 20px auto 10px;
+	}
+	
+	.xmit-page-header {
+		min-height: 10px;
+	}
+	
+	.xmit-page-footer {
+		display: none;
+	}
+	
+	select .js-wpv-filter-trigger {
+		width: 300px !important;
+	}
+	
+	#header-holder {
+		padding-top: 0;
+	}
+	
+	.fl-page-nav-bottom .fl-page-header-row .col-md-6,
+	.fl-page-header-row.row .col-md-6.col-sm-6:first-of-type {
+		text-align: center;
+		width: 100%;
+		float: none !important;
+	}
+
+	.nav.navbar-nav.menu, .fl-page-nav-bottom .fl-page-nav ul.navbar-nav > li,
+	.fl-page-nav-collapse ul.navbar-nav {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		margin-right: 0;
+	}
+	
+
+	.staff-info, .staff-photo {
+		float: none;
+		width: 100%;
+		padding: 20px;
+	}
+	
+	.staff-creds {
+		padding: 0;
+	}
+	
+	.footer-partners {
+	    width: 80%;
+	    float: none;
+	    margin: 20px auto 0;
+	}
+	
+	.footer-hospital, .footer-hospital:last-of-type {
+	    width: 30%;
+	    float: none;
+	    margin: 20px auto 0;
+	}
+}

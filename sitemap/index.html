@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.init={privacy:{cookies_enabled:true}};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(24),c={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,i.indexOf("dev")!==-1&&(c.dev=!0),i.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&o.on("internal-error",function(t){r(t.stack)}),c.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:i(c||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:s.now();o("err",[t,n])}var o=t("handle"),a=t(25),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),s.xhrWrappable&&t(10),d=!0)}c.on("fn-start",function(t,e,n){d&&(p+=1)}),c.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),c.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),c.on("internal-error",function(t){o("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var i=t("ee"),o=t("handle"),a=t(9),c=t(8),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;i.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),i.on(w,function(t,e){var n=t[0];n instanceof x&&o("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),i.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),i.on(g+h,function(t){o("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){c.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return i.emit(n+"start",[t,a],c),c.then(function(t){return i.emit(n+"end",[null,t],c),t},function(t){throw i.emit(n+"end",[t],c),t})})}var i=t("ee").get("fetch"),o=t(25),a=t(24);e.exports=i;var c=window,s="fetch-",f=s+"body-",u=["arrayBuffer","blob","json","text","formData"],d=c.Request,l=c.Response,p=c.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(c,"fetch",s),i.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(s+"done",[null,e],n)}else i.emit(s+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(s+u,r),o.on(c+u,i)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function o(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,i,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||s(t)&&l())&&(v.traceContextParentHeader=i(h,m),v.traceContextStateHeader=o(h,w,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&s(t)&&d())&&(v.newrelicHeader=a(h,m,w,n,r,f)),v}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",c=1,s="",f="";return i+"@nr="+o+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(c.d.tk=o),btoa(JSON.stringify(c))}function c(t){return f()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(21),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function o(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(17),m=t(16),w=t(14),v=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){o(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<l;c++)e.addEventListener(d[c],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof v&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||c),"/"===i.pathname&&(r[t]=i),i}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(16);e.exports=r},{}],15:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(24),c=t(25),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=i(l+e,!0,"api")}),u.addPageAction=i(l+"addPageAction",!0),u.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],17:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],18:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(26);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],19:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],20:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!w){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),w=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[l.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var s,f,u,d=t("handle"),l=t("loader"),p=t(23),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var w=!1,v=["click","keydown","mousedown","pointerdown","touchstart"];v.forEach(function(t){document.addEventListener(t,a,!1)})}p(c)}},{}],21:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<o.length;c++)i=o[c],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],22:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=s[1])}e.exports={agent:i,version:o,match:r}},{}],23:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],24:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],25:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],26:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?f(t,s,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!p.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),s=m(n),f=s.length,u=0;u<f;u++)s[u].apply(c,r);var l=d[y[n]];return l&&l.push([x,n,r,c]),c}}function o(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return l[t]=l[t]||i(n)}function v(t,e){u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:o,addEventListener:o,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:c,aborted:!1};return x}function o(t){return f(t,s,a)}function a(){return new r}function c(){(d.api||d.feature)&&(p.aborted=!0,d=p.backlog={})}var s="nr@context",f=t("gos"),u=t(24),d={},l={},p=e.exports=i();e.exports.getOrSetContext=o,p.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!E++){var t=b.info=NREUM.info,e=p.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(y,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=t(18),c=t("handle"),s=t(24),f=t("ee"),u=t(22),d=t(19),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;if(d(l.location)){NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var g=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=e.exports={offset:a.getLastTimestamp(),now:a,origin:g,features:{},xhrWrappable:x,userAgent:u};t(15),t(20),p[h]?(p[h]("DOMContentLoaded",o,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",i),l[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,s,f){function nrWrapper(){var o,a,u,l;try{a=this,o=d(arguments),u="function"==typeof r?r(o,a):r||{}}catch(p){i([p,"",[o,a,s],u],t)}c(n+"start",[o,a,s],u,f);try{return l=e.apply(a,o)}catch(h){throw c(n+"err",[o,a,h],u,f),h}finally{c(n+"end",[o,a,l],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[l]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,s,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)s=e[f],c=t[s],a(c)||(t[s]=n(c,u?s+r:r,i,s,o))}function c(n,r,o,a){if(!h||e){var c=h;h=!0;try{t.emit(n,r,o,e,a)}catch(s){i([s,n,r,o],t)}h=c}}return t||(t=u),n.inPlace=r,n.flag=l,n}function i(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)p.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[l])}function c(t,e){var n=e(t);return n[l]=t,o(t,n,u),n}function s(t,e,n){var r=t[e];t[e]=c(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(25),l="nr@original",p=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=s,e.exports.argsToArray=f},{}]},{},["loader",2,12,4,3]);;NREUM.loader_config={accountID:"815479",trustKey:"815479",agentID:"252387427",licenseKey:"bf220c09e2",applicationID:"252387427"};NREUM.info={beacon:"bam-cell.nr-data.net",errorBeacon:"bam-cell.nr-data.net",licenseKey:"bf220c09e2",applicationID:"252387427",sa:1};(function(){var sitevars=JSON.parse(atob("eyJjbG9uZV9oYXNoIjoiZmFiM2RmNGQiLCJodHRwX3Byb3RvY29sIjoiMS4xIiwic2l0ZV9ncm91cCI6MTMsInNob3J0X25hbWUiOiJwYXJ0bmVyc2ludGwiLCJjbGllbnRfdXNlciI6Im11ZWxsZXIyIiwibG9nX2hhc2giOiJmYWIzZGY0ZCIsImNhY2hlX3N0YXR1cyI6Ik1JU1MiLCJjbGllbnRfbmFtZSI6Ik11ZWxsZXIgRGVzaWduJ3MgU2l0ZXMiLCJ1YVN0cmluZyI6IldvcmRQcmVzc1wvNS44LjE7IGh0dHBzOlwvXC9pbnRlcm5hdGlvbmFsLnBhcnRuZXJzLm9yZyIsInVybF9wYXRoIjoiXC9zaXRlbWFwIiwiY2xpZW50X3R5cGUiOiJzdGFuZGFyZCIsInBhZ2VfdXJsIjoiXC9zaXRlbWFwIiwic2RfaG9zdCI6Imhvc3QtMTEiLCJjbG9uZV9pZCI6NzQ3MCwicmVxdWVzdF9pZCI6IjVmZDY2MzdmNDAzZDQ3NTg1OTQ4NDY5MGNlYTYwZmIwIiwiY2xpZW50X2lkIjo2MTUsInNkX3Byb3h5IjoicHJveHktMTgiLCJiYXNlX2RvbWFpbiI6ImludGVybmF0aW9uYWwucGFydG5lcnMub3JnIiwic2l0ZV9pZCI6NTE2MTMsInNvdXJjZV9pcCI6IjE4LjIxNy4yNDIuMTciLCJxdWVyeV9zdHJpbmciOiIifQ=="));for(const key of Object.keys(sitevars)){newrelic.setCustomAttribute(key,sitevars[key]);}})();(function() {var re = document.removeEventListener,ae = document.addEventListener,ev = ['scroll', 'mousemove', 'touchmove', 'touchstart'];function p() {var value = 'm';var date = new Date();date.setTime(date.getTime() + (30*24*60*60*1000));var expires = "; expires=" + date.toUTCString();document.cookie = "sd_fw_hash=67e3a6204b3602c841e5f9b659cae0ac" + expires + "; path=/";for (i = 0; i < ev.length; i++) {re(ev[i], p, false);}};window.addEventListener('load', function() {setTimeout(function() {for (i = 0; i < ev.length; i++) {ae(ev[i], p, false);}ae('scroll', p, false);}, 2000);});})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://davekuhar.github.io/partners-international/xmlrpc.php">
+<link rel="stylesheet" href="https://davekuhar.github.io/partners-international/wp-content/themes/bb-theme/css/bootstrap.min.css">
+<!--[if lt IE 9]>
+	<script src="https://davekuhar.github.io/partners-international/wp-content/themes/bb-theme/js/html5shiv.js"></script>
+	<script src="https://davekuhar.github.io/partners-international/wp-content/themes/bb-theme/js/respond.min.js"></script>
+<![endif]-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<title>Sitemap - Partners HealthCare International</title>
+	<link rel="canonical" href="https://davekuhar.github.io/partners-international/sitemap">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Sitemap - Partners HealthCare International">
+	<meta property="og:description" content="Site Map">
+	<meta property="og:url" content="https://davekuhar.github.io/partners-international/sitemap">
+	<meta property="og:site_name" content="Partners HealthCare International">
+	<meta property="article:modified_time" content="2019-11-01T12:18:49+00:00">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@PartnersNews">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://davekuhar.github.io/partners-international/#website","url":"https://davekuhar.github.io/partners-international/","name":"Partners HealthCare International","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://davekuhar.github.io/partners-international/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://davekuhar.github.io/partners-international/sitemap#webpage","url":"https://davekuhar.github.io/partners-international/sitemap","name":"Sitemap - Partners HealthCare International","isPartOf":{"@id":"https://davekuhar.github.io/partners-international/#website"},"datePublished":"2016-01-06T08:27:43+00:00","dateModified":"2019-11-01T12:18:49+00:00","breadcrumb":{"@id":"https://davekuhar.github.io/partners-international/sitemap#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://davekuhar.github.io/partners-international/sitemap"]}]},{"@type":"BreadcrumbList","@id":"https://davekuhar.github.io/partners-international/sitemap#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://davekuhar.github.io/partners-international/"},{"@type":"ListItem","position":2,"name":"Sitemap"}]}]}</script>
+
+
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="Partners HealthCare International &raquo; Feed" href="https://davekuhar.github.io/partners-international/feed">
+<link rel="alternate" type="application/rss+xml" title="Partners HealthCare International &raquo; Comments Feed" href="https://davekuhar.github.io/partners-international/comments/feed">
+<link rel="preload" href="https://davekuhar.github.io/partners-international/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.3/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://davekuhar.github.io/partners-international/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.3/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://davekuhar.github.io/partners-international/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.3/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<script>
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/davekuhar.github.io\/partners-international\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8.1"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style>img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="https://davekuhar.github.io/partners-international/wp-includes/css/dist/block-library/style.min.css?ver=5.8.1" media="all">
+<style id="wp-block-library-theme-inline-css">#start-resizable-editor-section{display:none}.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-code{font-family:Menlo,Consolas,monaco,monospace;color:#1e1e1e;padding:.8em 1em;border:1px solid #ddd;border-radius:4px}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-pullquote{border-top:4px solid;border-bottom:4px solid;margin-bottom:1.75em;color:currentColor}.wp-block-pullquote__citation,.wp-block-pullquote cite,.wp-block-pullquote footer{color:currentColor;text-transform:uppercase;font-size:.8125em;font-style:normal}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;position:relative;font-style:normal}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-group.has-background{padding:1.25em 2.375em;margin-top:0;margin-bottom:0}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto;opacity:.4}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{padding:.5em;border:1px solid;word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-template-part.has-background{padding:1.25em 2.375em;margin-top:0;margin-bottom:0}#end-resizable-editor-section{display:none}</style>
+<link rel="stylesheet" id="fl-builder-layout-1669-css" href="https://davekuhar.github.io/partners-international/wp-content/uploads/bb-plugin/cache/1669-layout.css?ver=eda622e8f69a7f72890fe59bfaf2a521" media="all">
+<link rel="stylesheet" id="font-awesome-5-css" href="https://davekuhar.github.io/partners-international/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.3/css/all.min.css?ver=2.5.0.1" media="all">
+<link rel="stylesheet" id="fl-builder-layout-bundle-75cf8ee1ea5db14a6a0665fb9d84a4ab-css" href="https://davekuhar.github.io/partners-international/wp-content/uploads/bb-plugin/cache/75cf8ee1ea5db14a6a0665fb9d84a4ab-layout-bundle.css?ver=2.5.0.1-1.3.3.1" media="all">
+<link rel="stylesheet" id="mediaelement-css" href="https://davekuhar.github.io/partners-international/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.16" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="https://davekuhar.github.io/partners-international/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=5.8.1" media="all">
+<link rel="stylesheet" id="views-pagination-style-css" href="https://davekuhar.github.io/partners-international/wp-content/plugins/wp-views/embedded/res/css/wpv-pagination.css?ver=2.3.1" media="all">
+<style id="views-pagination-style-inline-css">.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default > span.wpv-sort-list,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default .wpv-sort-list-item {border-color: #cdcdcd;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default .wpv-sort-list-item a {color: #444;background-color: #fff;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default a:hover,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default a:focus {color: #000;background-color: #eee;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default .wpv-sort-list-item.wpv-sort-list-current a {color: #000;background-color: #eee;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey > span.wpv-sort-list,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey .wpv-sort-list-item {border-color: #cdcdcd;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey .wpv-sort-list-item a {color: #444;background-color: #eeeeee;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey a:hover,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey a:focus {color: #000;background-color: #e5e5e5;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey .wpv-sort-list-item.wpv-sort-list-current a {color: #000;background-color: #e5e5e5;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-blue > span.wpv-sort-list,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-blue .wpv-sort-list-item {border-color: #0099cc;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-blue .wpv-sort-list-item a {color: #444;background-color: #cbddeb;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-blue a:hover,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-blue a:focus {color: #000;background-color: #95bedd;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-blue .wpv-sort-list-item.wpv-sort-list-current a {color: #000;background-color: #95bedd;}</style>
+<link rel="stylesheet" id="jquery-magnificpopup-css" href="https://davekuhar.github.io/partners-international/wp-content/plugins/bb-plugin/css/jquery.magnificpopup.min.css?ver=2.5.0.1" media="all">
+<link rel="stylesheet" id="bootstrap-css" href="https://davekuhar.github.io/partners-international/wp-content/themes/bb-theme/css/bootstrap.min.css?ver=1.7.9" media="all">
+<link rel="stylesheet" id="fl-automator-skin-css" href="https://davekuhar.github.io/partners-international/wp-content/uploads/bb-theme/skin-614d25fa80b9d.css?ver=1.7.9" media="all">
+<script src="https://davekuhar.github.io/partners-international/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+<script src="https://davekuhar.github.io/partners-international/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+<script src="https://davekuhar.github.io/partners-international/wp-includes/js/imagesloaded.min.js?ver=5.8.1" id="imagesloaded-js"></script>
+<link rel="https://api.w.org/" href="https://davekuhar.github.io/partners-international/wp-json/">
+<link rel="alternate" type="application/json" href="https://davekuhar.github.io/partners-international/wp-json/wp/v2/pages/1669">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://davekuhar.github.io/partners-international/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://davekuhar.github.io/partners-international/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.8.1">
+<link rel="shortlink" href="https://davekuhar.github.io/partners-international/?p=1669">
+<link rel="alternate" type="application/json+oembed" href="https://davekuhar.github.io/partners-international/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhttps://davekuhar.github.io/partners-international%2Fsitemap">
+<link rel="alternate" type="text/xml+oembed" href="https://davekuhar.github.io/partners-international/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhttps://davekuhar.github.io/partners-international%2Fsitemap&#038;format=xml">
+<link rel="icon" href="https://davekuhar.github.io/partners-international/wp-content/uploads/2016/11/cropped-p-favicon-32x32.png" sizes="32x32">
+<link rel="icon" href="https://davekuhar.github.io/partners-international/wp-content/uploads/2016/11/cropped-p-favicon-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://davekuhar.github.io/partners-international/wp-content/uploads/2016/11/cropped-p-favicon-180x180.png">
+<meta name="msapplication-TileImage" content="https://davekuhar.github.io/partners-international/wp-content/uploads/2016/11/cropped-p-favicon-270x270.png">
+<script id="fl-theme-custom-js">jQuery(document).ready(function() {
+  jQuery('.fl-tabs-labels .fl-tabs-label').each(function(){
+    jQuery(this).wrapInner('<span><\/span>');
+  });
+});</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4008777-23', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<link rel="stylesheet" href="https://davekuhar.github.io/partners-international/wp-content/themes/partners-healthcare/style.css">
+</head>
+
+<body class="page-template-default page page-id-1669 fl-builder fl-theme-builder-footer fl-theme-builder-header fl-framework-bootstrap fl-preset-default fl-full-width fl-search-active" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/9386c9e8-c968-446a-9498-b57b85fb9391.css">
+<script type="text/javascript">
+<!--
+	function toggle_visibility(id) {
+	var e = document.getElementById(id);
+	if(e.style.display == 'block')
+		e.style.display = 'none';
+	else
+		e.style.display = 'block';
+	}
+//-->
+</script>
+	<a aria-label="Skip to content" class="fl-screen-reader-text" href="#fl-main-content">Skip to content</a><div class="fl-page">
+	<header class="fl-builder-content fl-builder-content-2475 fl-builder-global-templates-locked" data-post-id="2475" data-type="header" data-sticky="0" data-sticky-breakpoint="medium" data-shrink="0" data-overlay="0" data-overlay-bg="transparent" data-shrink-image-height="50px" itemscope="itemscope" itemtype="http://schema.org/WPHeader"><div class="fl-row fl-row-full-width fl-row-bg-color fl-node-59796eaebb89d fl-visible-desktop" data-node="59796eaebb89d">
+	<div class="fl-row-content-wrap">
+								<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-59796eaebb8e1 fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="59796eaebb8e1">
+			<div class="fl-col fl-node-5979899320b90 fl-col-small fl-visible-desktop-medium" data-node="5979899320b90">
+	<div class="fl-col-content fl-node-content">
+		</div>
+</div>
+			<div class="fl-col fl-node-59796eaebb928 fl-col-small" data-node="59796eaebb928">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-html fl-node-59796fcdcde89" data-node="59796fcdcde89">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-html">
+	<a href="https://davekuhar.github.io/partners-international/"><img width="300" alt="Partners International" class="aligncenter" style="max-width: 100%;" src="https://davekuhar.github.io/partners-international/wp-content/themes/partners-healthcare/images/partners-international.svg"></a>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+			<div class="fl-col fl-node-59796eaebb962 fl-col-small" data-node="59796eaebb962">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-menu fl-node-5979712e361ec fl-visible-desktop" data-node="5979712e361ec">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-menu">
+		<div class="fl-clear"></div>
+	<nav aria-label="Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"><ul id="menu-header-nav" class="menu fl-menu-horizontal fl-toggle-none">
+<li id="menu-item-1439" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://davekuhar.github.io/partners-international/our-team">Team</a></li>
+<li id="menu-item-2528" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://davekuhar.github.io/partners-international/media-center">News</a></li>
+<li id="menu-item-564" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://davekuhar.github.io/partners-international/contact">Contact</a></li>
+</ul></nav>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-none fl-node-597972a67a8d6 fl-visible-desktop" data-node="597972a67a8d6">
+	<div class="fl-row-content-wrap">
+								<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-597972a67cf39" data-node="597972a67cf39">
+			<div class="fl-col fl-node-597972a67cfe2" data-node="597972a67cfe2">
+	<div class="fl-col-content fl-node-content">
+	<div id="main-header-nav" class="fl-module fl-module-menu fl-node-59798235f0062 add-search-icon" data-node="59798235f0062">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-menu">
+		<div class="fl-clear"></div>
+	<nav aria-label="Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"><ul id="menu-main-nav" class="menu fl-menu-horizontal fl-toggle-none">
+<li id="menu-item-2140" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children fl-has-submenu">
+<div class="fl-has-submenu-container">
+<a href="https://davekuhar.github.io/partners-international/our-mission-and-vision">About Us</a><span class="fl-menu-toggle"></span>
+</div>
+<ul class="sub-menu">	<li id="menu-item-2412" class="menu-item menu-item-type-custom menu-item-object-custom">
+<a href="https://davekuhar.github.io/partners-international/our-mission-and-vision">Our Mission and Vision</a>	</li>
+<li id="menu-item-2147" class="menu-item menu-item-type-post_type menu-item-object-page">
+<a href="https://davekuhar.github.io/partners-international/our-mission-and-vision/how-we-work">How We Work</a>	</li>
+<li id="menu-item-2458" class="menu-item menu-item-type-custom menu-item-object-custom">
+<a href="https://davekuhar.github.io/partners-international/global-impact">Where We Work</a>	</li>
+<li id="menu-item-2145" class="menu-item menu-item-type-post_type menu-item-object-page">
+<a href="https://davekuhar.github.io/partners-international/our-mission-and-vision/who-we-work-with">Who We Work With</a>	</li>
+<li id="menu-item-2141" class="menu-item menu-item-type-post_type menu-item-object-page">
+<a href="https://davekuhar.github.io/partners-international/our-mission-and-vision/leadership-staff">Leadership and Staff</a>	</li>
+<li id="menu-item-2144" class="menu-item menu-item-type-post_type menu-item-object-page">
+<a href="https://davekuhar.github.io/partners-international/our-mission-and-vision/partners-healthcare">Partners HealthCare</a>	</li>
+<li id="menu-item-2143" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://davekuhar.github.io/partners-international/our-mission-and-vision/our-hospitals">Our Hospitals</a></li>
+</ul>
+</li>
+<li id="menu-item-2173" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children fl-has-submenu">
+<div class="fl-has-submenu-container">
+<a href="https://davekuhar.github.io/partners-international/why-choose-us">Capabilities</a><span class="fl-menu-toggle"></span>
+</div>
+<ul class="sub-menu">	<li id="menu-item-2413" class="menu-item menu-item-type-custom menu-item-object-custom">
+<a href="https://davekuhar.github.io/partners-international/why-choose-us">Why Choose Us</a>	</li>
+<li id="menu-item-2177" class="menu-item menu-item-type-post_type menu-item-object-page">
+<a href="https://davekuhar.github.io/partners-international/why-choose-us/facility-planning-and-development">Facility Planning &#038; Development</a>	</li>
+<li id="menu-item-2176" class="menu-item menu-item-type-post_type menu-item-object-page">
+<a href="https://davekuhar.github.io/partners-international/why-choose-us/programming-and-operations-planning">Programming and Operations Planning</a>	</li>
+<li id="menu-item-2175" class="menu-item menu-item-type-post_type menu-item-object-page">
+<a href="https://davekuhar.github.io/partners-international/why-choose-us/quality-improvement-and-patient-safety">Quality Improvement and Patient Safety</a>	</li>
+<li id="menu-item-2174" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://davekuhar.github.io/partners-international/why-choose-us/academic-and-professional-development">Academic and Professional Development</a></li>
+</ul>
+</li>
+<li id="menu-item-2454" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children fl-has-submenu">
+<div class="fl-has-submenu-container">
+<a href="https://davekuhar.github.io/partners-international/innovation">Innovation</a><span class="fl-menu-toggle"></span>
+</div>
+<ul class="sub-menu">	<li id="menu-item-2459" class="menu-item menu-item-type-custom menu-item-object-custom">
+<a href="https://davekuhar.github.io/partners-international/innovation/#innovation">Partners Innovation</a>	</li>
+<li id="menu-item-2455" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://davekuhar.github.io/partners-international/innovation/#wmif">World Medical Innovation Forum</a></li>
+</ul>
+</li>
+<li id="menu-item-2448" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://davekuhar.github.io/partners-international/global-impact">Global Impact</a></li>
+<li id="menu-item-2187" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://davekuhar.github.io/partners-international/media-center">Media Center</a></li>
+</ul></nav>
+</div>
+	</div>
+</div>
+<div class="fl-page-nav-search">
+	<a href="javascript:void(0);" class="fa fa-search"></a>
+	<form method="get" role="search" action="https://davekuhar.github.io/partners-international/" title="Type and press Enter to search.">
+		<input type="text" class="fl-search-input" name="s" value="Type your search here" onfocus="if (this.value == 'Type your search here') { this.value = ''; }" onblur="if (this.value == '') this.value='Type your search here';">
+	</form>
+</div>	</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-59a7039fe16bc fl-visible-medium-mobile" data-node="59a7039fe16bc">
+	<div class="fl-row-content-wrap">
+								<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-59a7039fe18a1 fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="59a7039fe18a1">
+			<div class="fl-col fl-node-59a7039fe1927" data-node="59a7039fe1927">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-html fl-node-59a7039fe1962" data-node="59a7039fe1962">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-html">
+	<a href="https://davekuhar.github.io/partners-international/"><img width="300" alt="Partners International" class="aligncenter" style="max-width: 100%;" src="https://davekuhar.github.io/partners-international/wp-content/themes/partners-healthcare/images/partners-international.svg"></a>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-59a701b1af2fb fl-visible-medium-mobile" data-node="59a701b1af2fb">
+	<div class="fl-row-content-wrap">
+								<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-59a701b1b379a" data-node="59a701b1b379a">
+			<div class="fl-col fl-node-59a701b1b386c" data-node="59a701b1b386c">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-menu fl-node-59a702b838e67" data-node="59a702b838e67">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-menu fl-menu-responsive-toggle-always">
+	<button class="fl-menu-mobile-toggle hamburger" aria-label="Menu"><span class="svg-container"><svg version="1.1" class="hamburger-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 512 512">
+<rect class="fl-hamburger-menu-top" width="512" height="102"></rect>
+<rect class="fl-hamburger-menu-middle" y="205" width="512" height="102"></rect>
+<rect class="fl-hamburger-menu-bottom" y="410" width="512" height="102"></rect>
+</svg>
+</span></button>	<div class="fl-clear"></div>
+	<nav aria-label="Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"><ul id="menu-mobile-menu" class="menu fl-menu-horizontal fl-toggle-none">
+<li id="menu-item-2552" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children fl-has-submenu">
+<div class="fl-has-submenu-container">
+<a href="https://davekuhar.github.io/partners-international/our-mission-and-vision">About Us</a><span class="fl-menu-toggle"></span>
+</div>
+<ul class="sub-menu">	<li id="menu-item-2560" class="menu-item menu-item-type-custom menu-item-object-custom">
+<a href="https://davekuhar.github.io/partners-international/our-mission-and-vision">Our Mission and Vision</a>	</li>
+<li id="menu-item-2554" class="menu-item menu-item-type-post_type menu-item-object-page">
+<a href="https://davekuhar.github.io/partners-international/our-mission-and-vision/how-we-work">How We Work</a>	</li>
+<li id="menu-item-2561" class="menu-item menu-item-type-custom menu-item-object-custom">
+<a href="https://davekuhar.github.io/partners-international/global-impact">Where We Work</a>	</li>
+<li id="menu-item-2559" class="menu-item menu-item-type-post_type menu-item-object-page">
+<a href="https://davekuhar.github.io/partners-international/our-mission-and-vision/who-we-work-with">Who We Work With</a>	</li>
+<li id="menu-item-2555" class="menu-item menu-item-type-post_type menu-item-object-page">
+<a href="https://davekuhar.github.io/partners-international/our-mission-and-vision/leadership-staff">Leadership and Staff</a>	</li>
+<li id="menu-item-2557" class="menu-item menu-item-type-post_type menu-item-object-page">
+<a href="https://davekuhar.github.io/partners-international/our-mission-and-vision/partners-healthcare">Partners HealthCare</a>	</li>
+<li id="menu-item-2556" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://davekuhar.github.io/partners-international/our-mission-and-vision/our-hospitals">Our Hospitals</a></li>
+</ul>
+</li>
+<li id="menu-item-2562" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children fl-has-submenu">
+<div class="fl-has-submenu-container">
+<a href="https://davekuhar.github.io/partners-international/why-choose-us">Capabilities</a><span class="fl-menu-toggle"></span>
+</div>
+<ul class="sub-menu">	<li id="menu-item-2567" class="menu-item menu-item-type-custom menu-item-object-custom">
+<a href="https://davekuhar.github.io/partners-international/why-choose-us">Why Choose Us</a>	</li>
+<li id="menu-item-2566" class="menu-item menu-item-type-post_type menu-item-object-page">
+<a href="https://davekuhar.github.io/partners-international/why-choose-us/facility-planning-and-development">Facility Planning and Development</a>	</li>
+<li id="menu-item-2565" class="menu-item menu-item-type-post_type menu-item-object-page">
+<a href="https://davekuhar.github.io/partners-international/why-choose-us/programming-and-operations-planning">Programming and Operations Planning</a>	</li>
+<li id="menu-item-2564" class="menu-item menu-item-type-post_type menu-item-object-page">
+<a href="https://davekuhar.github.io/partners-international/why-choose-us/quality-improvement-and-patient-safety">Quality Improvement and Patient Safety</a>	</li>
+<li id="menu-item-2563" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://davekuhar.github.io/partners-international/why-choose-us/academic-and-professional-development">Academic and Professional Development</a></li>
+</ul>
+</li>
+<li id="menu-item-2568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children fl-has-submenu">
+<div class="fl-has-submenu-container">
+<a href="https://davekuhar.github.io/partners-international/innovation">Innovation</a><span class="fl-menu-toggle"></span>
+</div>
+<ul class="sub-menu">	<li id="menu-item-2569" class="menu-item menu-item-type-custom menu-item-object-custom">
+<a href="https://davekuhar.github.io/partners-international/innovation/#innovation">Partners Innovation</a>	</li>
+<li id="menu-item-2570" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://davekuhar.github.io/partners-international/innovation/#wmif">World Medical Innovation Forum</a></li>
+</ul>
+</li>
+<li id="menu-item-2571" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://davekuhar.github.io/partners-international/global-impact">Global Impact</a></li>
+<li id="menu-item-2572" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://davekuhar.github.io/partners-international/media-center">Media Center</a></li>
+<li id="menu-item-2573" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://davekuhar.github.io/partners-international/contact">Contact</a></li>
+</ul></nav>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</header><div class="uabb-js-breakpoint" style="display: none;"></div>	<div class="fl-page-content" itemprop="mainContentOfPage">
+	
+		
+<div class="fl-content-full container">
+	<div class="row">
+		<div class="fl-content col-md-12">
+			<article class="fl-post post-1669 page type-page status-publish hentry" id="fl-post-1669" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+
+			<div class="fl-post-content clearfix" itemprop="text">
+		<div class="fl-builder-content fl-builder-content-1669 fl-builder-content-primary fl-builder-global-templates-locked" data-post-id="1669">
+<div class="fl-row fl-row-fixed-width fl-row-bg-none fl-node-5935bb16b9a7b" data-node="5935bb16b9a7b">
+	<div class="fl-row-content-wrap">
+								<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-5935bb16bb140" data-node="5935bb16bb140">
+			<div class="fl-col fl-node-5935bb16bb1ea" data-node="5935bb16bb1ea">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-heading fl-node-59a859254dec7" data-node="59a859254dec7">
+	<div class="fl-module-content fl-node-content">
+		<h3 class="fl-heading">
+		<span class="fl-heading-text">Site Map</span>
+	</h3>
+	</div>
+</div>
+<div class="fl-module fl-module-rich-text fl-node-5935bb16bdedf" data-node="5935bb16bdedf">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p></p>
+<div class="wsp-container">
+<h2 class="wsp-pages-title">Pages</h2>
+<ul class="wsp-pages-list">
+<li class="page_item page-item-2074 page_item_has_children">
+<a href="https://davekuhar.github.io/partners-international/our-mission-and-vision">About Us</a>
+<ul class="children">
+	<li class="page_item page-item-2086"><a href="https://davekuhar.github.io/partners-international/our-mission-and-vision/faq">FAQ</a></li>
+	<li class="page_item page-item-2075"><a href="https://davekuhar.github.io/partners-international/our-mission-and-vision/how-we-work">How We Work</a></li>
+	<li class="page_item page-item-2120"><a href="https://davekuhar.github.io/partners-international/our-mission-and-vision/leadership-staff">Leadership and Team</a></li>
+	<li class="page_item page-item-2085"><a href="https://davekuhar.github.io/partners-international/our-mission-and-vision/our-hospitals">Our Hospitals</a></li>
+	<li class="page_item page-item-2083"><a href="https://davekuhar.github.io/partners-international/our-mission-and-vision/partners-healthcare">Partners HealthCare</a></li>
+	<li class="page_item page-item-2079"><a href="https://davekuhar.github.io/partners-international/our-mission-and-vision/who-we-work-with">Who We Work With</a></li>
+</ul>
+</li>
+<li class="page_item page-item-2087 page_item_has_children">
+<a href="https://davekuhar.github.io/partners-international/why-choose-us">Capabilities</a>
+<ul class="children">
+	<li class="page_item page-item-2092"><a href="https://davekuhar.github.io/partners-international/why-choose-us/academic-and-professional-development">Academic and Professional Development</a></li>
+	<li class="page_item page-item-2088"><a href="https://davekuhar.github.io/partners-international/why-choose-us/facility-planning-and-development">Facility Planning and Development</a></li>
+	<li class="page_item page-item-2089"><a href="https://davekuhar.github.io/partners-international/why-choose-us/programming-and-operations-planning">Programming and Operations Planning</a></li>
+	<li class="page_item page-item-2091"><a href="https://davekuhar.github.io/partners-international/why-choose-us/quality-improvement-and-patient-safety">Quality Improvement and Patient Safety</a></li>
+</ul>
+</li>
+<li class="page_item page-item-562"><a href="https://davekuhar.github.io/partners-international/contact">Contact</a></li>
+<li class="page_item page-item-1683"><a href="https://davekuhar.github.io/partners-international/disclaimer">Disclaimer</a></li>
+<li class="page_item page-item-2393"><a href="https://davekuhar.github.io/partners-international/global-impact">Global Impact</a></li>
+<li class="page_item page-item-2453"><a href="https://davekuhar.github.io/partners-international/innovation">Innovation</a></li>
+<li class="page_item page-item-2182"><a href="https://davekuhar.github.io/partners-international/media-center">Media Center</a></li>
+<li class="page_item page-item-874"><a href="https://davekuhar.github.io/partners-international/news">News</a></li>
+<li class="page_item page-item-1436"><a href="https://davekuhar.github.io/partners-international/our-team">Our Team</a></li>
+<li class="page_item page-item-556"><a href="https://davekuhar.github.io/partners-international/">Partners HealthCare International</a></li>
+<li class="page_item page-item-2629"><a href="https://davekuhar.github.io/partners-international/privacy-policy">Privacy Policy</a></li>
+<li class="page_item page-item-1669 current_page_item"><a href="https://davekuhar.github.io/partners-international/sitemap" aria-current="page">Sitemap</a></li>
+</ul>
+<h2 class="wsp-posts-title">Posts by category</h2>
+<ul class="wsp-posts-list">
+	<li>
+<strong class="wsp-category-title">Category: <a href="https://davekuhar.github.io/partners-international/category/news">General News</a></strong>
+<ul class="wsp-posts-list">		<li class="wsp-post"><a href="https://davekuhar.github.io/partners-international/news/new-stroke-rehab-unit-opens-malta-hard-work-phs-experts">New Stroke Rehab Unit Opens In Malta Through Hard Work Of PHS Experts</a></li>
+</ul>
+</li>
+	<li>
+<strong class="wsp-category-title">Category: <a href="https://davekuhar.github.io/partners-international/category/press-releases">Press Releases</a></strong>
+<ul class="wsp-posts-list">		<li class="wsp-post"><a href="https://davekuhar.github.io/partners-international/press-releases/bermuda-cancer-health-centre">Bermuda Cancer and Health Centre and Dana Farber/Brigham and Women&#8217;s Cancer Center to Partner</a></li>
+		<li class="wsp-post"><a href="https://davekuhar.github.io/partners-international/press-releases/international-nurses-day">Partners HealthCare Launches Year-long Global Initiative in Support of International Nurses Day 2015</a></li>
+		<li class="wsp-post"><a href="https://davekuhar.github.io/partners-international/press-releases/phi-and-china-creation-holding-group">PHI and China Creation Holding Group Partner to Develop New International Standard Hospital</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="wsp-popups-title">Popups</h2>
+<ul class="wsp-popups-list">
+<li><a href="https://davekuhar.github.io/partners-international/?post_type=popup&p=1778">Email modal</a></li>
+</ul>
+<h2 class="wsp-staffs-title">People</h2>
+<ul class="wsp-staffs-list">
+<li><a href="https://davekuhar.github.io/partners-international/staff/chris-coburn">Chris Coburn</a></li>
+<li><a href="https://davekuhar.github.io/partners-international/staff/thomas-aretz">Thomas Aretz, MD</a></li>
+<li><a href="https://davekuhar.github.io/partners-international/staff/trung-do">Trung Do</a></li>
+<li><a href="https://davekuhar.github.io/partners-international/staff/lynn-eckhert">Lynn Eckhert, MD, DrPH</a></li>
+<li><a href="https://davekuhar.github.io/partners-international/staff/ray-liu">Raymond Liu, MD</a></li>
+<li><a href="https://davekuhar.github.io/partners-international/staff/lori-matthews">Lori Matthews</a></li>
+<li><a href="https://davekuhar.github.io/partners-international/staff/lucene-tong-md">Lucene Tong, MD</a></li>
+<li><a href="https://davekuhar.github.io/partners-international/staff/rachel-dambrosio">Rachel D’Ambrosio</a></li>
+<li><a href="https://davekuhar.github.io/partners-international/staff/irene-daly">Irene Daly</a></li>
+<li><a href="https://davekuhar.github.io/partners-international/staff/john-flynn">John Flynn</a></li>
+<li><a href="https://davekuhar.github.io/partners-international/staff/pallavi-jagasia">Pallavi Jagasia</a></li>
+<li><a href="https://davekuhar.github.io/partners-international/staff/sandra-mori">Sandra Mori</a></li>
+<li><a href="https://davekuhar.github.io/partners-international/staff/jacqueline-soo">Jacqueline Soo</a></li>
+<li><a href="https://davekuhar.github.io/partners-international/staff/cassandra-thompson">Cassandra Thompson</a></li>
+<li><a href="https://davekuhar.github.io/partners-international/staff/angela-williams">Angela Williams</a></li>
+<li><a href="https://davekuhar.github.io/partners-international/staff/lauren-williams-rn-dm">Lauren Williams, RN, DM</a></li>
+<li><a href="https://davekuhar.github.io/partners-international/staff/su-joung-yoon">Su Joung Yoon</a></li>
+</ul>
+<h2 class="wsp-staff-categorys-title">Innovation Departments</h2>
+<ul class="wsp-staff-categorys-list">
+<li><a href="https://davekuhar.github.io/partners-international/staff-category/administration">Administration</a></li>
+<li><a href="https://davekuhar.github.io/partners-international/staff-category/leadership">Leadership</a></li>
+</ul>
+<h2 class="wsp-staff-tagss-title">Market Sectors</h2>
+<ul class="wsp-staff-tagss-list">
+<li><a href="https://davekuhar.github.io/partners-international/staff-tags/hit">HIT</a></li>
+</ul>
+</div>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="uabb-js-breakpoint" style="display: none;"></div>	</div>
+<!-- .fl-post-content -->
+	
+</article>
+
+<!-- .fl-post -->
+		</div>
+	</div>
+</div>
+
+
+	</div>
+<!-- .fl-page-content -->
+	<footer class="fl-builder-content fl-builder-content-2471 fl-builder-global-templates-locked" data-post-id="2471" data-type="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter"><div class="fl-row fl-row-full-width fl-row-bg-color fl-node-5979368d30bfe" data-node="5979368d30bfe">
+	<div class="fl-row-content-wrap">
+								<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-5979698c75ee0" data-node="5979698c75ee0">
+			<div class="fl-col fl-node-59796bc867e28" data-node="59796bc867e28">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-html fl-node-599de81f8a219 fl-visible-desktop-medium" data-node="599de81f8a219">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-html">
+	<img loading="lazy" width="350" height="30" alt="Founding Members" class="aligncenter" style="max-width: 100%;" src="https://davekuhar.github.io/partners-international/wp-content/themes/partners-healthcare/images/intl-footer/PHC-logo.svg">
+</div>
+	</div>
+</div>
+<div class="fl-module fl-module-html fl-node-599debf5db408 fl-visible-mobile" data-node="599debf5db408">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-html">
+	<img loading="lazy" width="350" height="30" alt="Founding Members" class="aligncenter" style="max-width: 100%;" src="https://davekuhar.github.io/partners-international/wp-content/themes/partners-healthcare/images/intl-footer/PHC-logo.svg">
+</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-59796b1493b1d" data-node="59796b1493b1d">
+	<div class="fl-row-content-wrap">
+								<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-59796b1496a4e" data-node="59796b1496a4e">
+			<div class="fl-col fl-node-59796b1496af7" data-node="59796b1496af7">
+	<div class="fl-col-content fl-node-content">
+	<div class="fl-module fl-module-menu fl-node-597967a5a704e fl-visible-desktop-medium" data-node="597967a5a704e">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-menu">
+		<div class="fl-clear"></div>
+	<nav aria-label="Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"><ul id="menu-footer-links" class="menu fl-menu-horizontal fl-toggle-none">
+<li id="menu-item-2546" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" href="http://www.partners.org/">Partners HealthCare</a></li>
+<li id="menu-item-2472" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://davekuhar.github.io/partners-international/contact">Contact Us</a></li>
+<li id="menu-item-2473" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1669 current_page_item"><a href="https://davekuhar.github.io/partners-international/sitemap">Site Map</a></li>
+<li id="menu-item-2474" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://davekuhar.github.io/partners-international/disclaimer">Disclaimer</a></li>
+<li id="menu-item-2653" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" href="https://www.partners.org/Notices/Web-Privacy-Statement.aspx">Privacy Policy</a></li>
+</ul></nav>
+</div>
+	</div>
+</div>
+<div class="fl-module fl-module-menu fl-node-599dec4e555d4 fl-visible-mobile footer-nav-mobile" data-node="599dec4e555d4">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-menu">
+		<div class="fl-clear"></div>
+	<nav aria-label="Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"><ul id="menu-footer-links-1" class="menu fl-menu-vertical fl-toggle-none">
+<li id="menu-item-2546" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" href="http://www.partners.org/">Partners HealthCare</a></li>
+<li id="menu-item-2472" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://davekuhar.github.io/partners-international/contact">Contact Us</a></li>
+<li id="menu-item-2473" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1669 current_page_item"><a href="https://davekuhar.github.io/partners-international/sitemap">Site Map</a></li>
+<li id="menu-item-2474" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://davekuhar.github.io/partners-international/disclaimer">Disclaimer</a></li>
+<li id="menu-item-2653" class="menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" href="https://www.partners.org/Notices/Web-Privacy-Statement.aspx">Privacy Policy</a></li>
+</ul></nav>
+</div>
+	</div>
+</div>
+<div class="fl-module fl-module-rich-text fl-node-5979368d30b9b" data-node="5979368d30b9b">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p style="text-align: center;"><span style="font-size: 12px;">© COPYRIGHT PARTNERS HEALTHCARE INTERNATIONAL</span></p>
+</div>
+	</div>
+</div>
+	</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</footer><div class="uabb-js-breakpoint" style="display: none;"></div>	</div>
+<!-- .fl-page -->
+<script type="text/html" id="tmpl-wp-playlist-current-item">____simple_html_dom__voku__broken_html____105118945</script>
+<script type="text/html" id="tmpl-wp-playlist-item">____simple_html_dom__voku__broken_html____2812113173</script>
+	<!--[if IE 7]><style>
+.wpv-pagination { *zoom: 1; }
+</style><![endif]-->
+<script src="https://davekuhar.github.io/partners-international/wp-content/uploads/bb-plugin/cache/1669-layout.js?ver=b9ef5518d53fb45e9e5058c2b26a2a18" id="fl-builder-layout-1669-js"></script>
+<script src="https://davekuhar.github.io/partners-international/wp-content/plugins/bb-plugin/js/jquery.ba-throttle-debounce.min.js?ver=2.5.0.1" id="jquery-throttle-js"></script>
+<script src="https://davekuhar.github.io/partners-international/wp-content/uploads/bb-plugin/cache/08e49bf123ab0a392d02a212de8613f6-layout-bundle.js?ver=2.5.0.1-1.3.3.1" id="fl-builder-layout-bundle-08e49bf123ab0a392d02a212de8613f6-js"></script>
+<script src="https://davekuhar.github.io/partners-international/wp-includes/js/jquery/ui/core.min.js?ver=1.12.1" id="jquery-ui-core-js"></script>
+<script src="https://davekuhar.github.io/partners-international/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.12.1" id="jquery-ui-datepicker-js"></script>
+<script id="jquery-ui-datepicker-js-after">
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":0,"isRTL":false});});
+</script>
+<script id="mediaelement-core-js-before">
+var mejsL10n = {"language":"en","strings":{"mejs.download-file":"Download File","mejs.install-flash":"You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/","mejs.fullscreen":"Fullscreen","mejs.play":"Play","mejs.pause":"Pause","mejs.time-slider":"Time Slider","mejs.time-help-text":"Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.","mejs.live-broadcast":"Live Broadcast","mejs.volume-help-text":"Use Up\/Down Arrow keys to increase or decrease volume.","mejs.unmute":"Unmute","mejs.mute":"Mute","mejs.volume-slider":"Volume Slider","mejs.video-player":"Video Player","mejs.audio-player":"Audio Player","mejs.captions-subtitles":"Captions\/Subtitles","mejs.captions-chapters":"Chapters","mejs.none":"None","mejs.afrikaans":"Afrikaans","mejs.albanian":"Albanian","mejs.arabic":"Arabic","mejs.belarusian":"Belarusian","mejs.bulgarian":"Bulgarian","mejs.catalan":"Catalan","mejs.chinese":"Chinese","mejs.chinese-simplified":"Chinese (Simplified)","mejs.chinese-traditional":"Chinese (Traditional)","mejs.croatian":"Croatian","mejs.czech":"Czech","mejs.danish":"Danish","mejs.dutch":"Dutch","mejs.english":"English","mejs.estonian":"Estonian","mejs.filipino":"Filipino","mejs.finnish":"Finnish","mejs.french":"French","mejs.galician":"Galician","mejs.german":"German","mejs.greek":"Greek","mejs.haitian-creole":"Haitian Creole","mejs.hebrew":"Hebrew","mejs.hindi":"Hindi","mejs.hungarian":"Hungarian","mejs.icelandic":"Icelandic","mejs.indonesian":"Indonesian","mejs.irish":"Irish","mejs.italian":"Italian","mejs.japanese":"Japanese","mejs.korean":"Korean","mejs.latvian":"Latvian","mejs.lithuanian":"Lithuanian","mejs.macedonian":"Macedonian","mejs.malay":"Malay","mejs.maltese":"Maltese","mejs.norwegian":"Norwegian","mejs.persian":"Persian","mejs.polish":"Polish","mejs.portuguese":"Portuguese","mejs.romanian":"Romanian","mejs.russian":"Russian","mejs.serbian":"Serbian","mejs.slovak":"Slovak","mejs.slovenian":"Slovenian","mejs.spanish":"Spanish","mejs.swahili":"Swahili","mejs.swedish":"Swedish","mejs.tagalog":"Tagalog","mejs.thai":"Thai","mejs.turkish":"Turkish","mejs.ukrainian":"Ukrainian","mejs.vietnamese":"Vietnamese","mejs.welsh":"Welsh","mejs.yiddish":"Yiddish"}};
+</script>
+<script src="https://davekuhar.github.io/partners-international/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.16" id="mediaelement-core-js"></script>
+<script src="https://davekuhar.github.io/partners-international/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=5.8.1" id="mediaelement-migrate-js"></script>
+<script id="mediaelement-js-extra">
+var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPrefix":"mejs-","stretching":"responsive"};
+</script>
+<script src="https://davekuhar.github.io/partners-international/wp-includes/js/mediaelement/wp-mediaelement.min.js?ver=5.8.1" id="wp-mediaelement-js"></script>
+<script src="https://davekuhar.github.io/partners-international/wp-includes/js/underscore.min.js?ver=1.13.1" id="underscore-js"></script>
+<script id="wp-util-js-extra">
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+</script>
+<script src="https://davekuhar.github.io/partners-international/wp-includes/js/wp-util.min.js?ver=5.8.1" id="wp-util-js"></script>
+<script src="https://davekuhar.github.io/partners-international/wp-includes/js/backbone.min.js?ver=1.4.0" id="backbone-js"></script>
+<script src="https://davekuhar.github.io/partners-international/wp-includes/js/mediaelement/wp-playlist.min.js?ver=5.8.1" id="wp-playlist-js"></script>
+<script id="views-pagination-script-js-extra">
+var wpv_pagination_local = {"front_ajaxurl":"https:\/\/davekuhar.github.io\/partners-international\/wp-admin\/admin-ajax.php","calendar_image":"https:\/\/davekuhar.github.io\/partners-international\/wp-content\/plugins\/wp-views\/embedded\/res\/img\/calendar.gif","calendar_text":"Select date","datepicker_min_date":null,"datepicker_max_date":null,"resize_debounce_tolerance":"100","datepicker_style_url":"https:\/\/davekuhar.github.io\/partners-international\/wp-content\/plugins\/wp-views\/embedded\/toolset\/toolset-common\/toolset-forms\/css\/wpt-jquery-ui\/jquery-ui-1.11.4.custom.css"};
+</script>
+<script src="https://davekuhar.github.io/partners-international/wp-content/plugins/wp-views/embedded/res/js/wpv-pagination-embedded.js?ver=2.3.1" id="views-pagination-script-js"></script>
+<script src="https://davekuhar.github.io/partners-international/wp-content/plugins/bb-plugin/js/jquery.magnificpopup.min.js?ver=2.5.0.1" id="jquery-magnificpopup-js"></script>
+<script src="https://davekuhar.github.io/partners-international/wp-content/themes/bb-theme/js/bootstrap.min.js?ver=1.7.9" id="bootstrap-js"></script>
+<script id="fl-automator-js-extra">
+var themeopts = {"medium_breakpoint":"992","mobile_breakpoint":"768"};
+</script>
+<script src="https://davekuhar.github.io/partners-international/wp-content/themes/bb-theme/js/theme.min.js?ver=1.7.9" id="fl-automator-js"></script>
+<script src="https://davekuhar.github.io/partners-international/wp-includes/js/wp-embed.min.js?ver=5.8.1" id="wp-embed-js"></script>
+	   <script type="text/javascript">
+	     	jQuery('.soliloquy-container').removeClass('no-js');
+	   </script>
+	   <script type="text/javascript">
+jQuery(document).ready(function() {
+	jQuery.fn.cleardefault = function() {
+	return this.focus(function() {
+		if( this.value == this.defaultValue ) {
+			this.value = "";
+		}
+	}).blur(function() {
+		if( !this.value.length ) {
+			this.value = this.defaultValue;
+		}
+	});
+};
+jQuery(".clearit input, .clearit textarea").cleardefault();
+});
+</script>
+</body>
+</html>
