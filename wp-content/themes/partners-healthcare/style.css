@@ -342,7 +342,7 @@ li#field_1_1 .gfield_label {
 	min-height: 240px;
 	margin: 0;
 	padding: 0;
-	background: url(https://davekuhar.github.io/partners-international/wp-content/themes/partners-healthcare/images/personnel-header-600.jpg); 
+	background: url(http://phc-international.muellerarchive.com/wp-content/themes/partners-healthcare/images/personnel-header-600.jpg); 
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	background-size: cover;
@@ -810,7 +810,7 @@ div.staff-taxonomy span {
       rgba(0,113,151,.9), 
       rgba(0,113,151,.9)
     ),
-    url(https://davekuhar.github.io/partners-international/wp-content/themes/partners-healthcare/images/email-signup.jpg);
+    url(http://phc-international.muellerarchive.com/wp-content/themes/partners-healthcare/images/email-signup.jpg);
     color: white;
 }
 
